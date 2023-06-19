@@ -386,32 +386,37 @@
             </div>
         </div>
     </div>
-    <div class="application">
-        <h1 class="app_text">Оставить заявку прямо сейчас</h1>
-        <div class="bord">
-            <div class="all_field">
-                <select class="form-select ticketik" aria-label="Default select example">
-                    <option selected>Выберите абонемент</option>
-                    <option value="1">Абонемент на 12 занятий</option>
-                    <option value="2">Абонемент на 24 занятий</option>
-                    <option value="3">Абонемент на 36 занятий</option>
-                    <option value="3">Семейный доступ 8 занятий</option>
-                    <option value="3">Семейный доступ 12 занятий</option>
-                    <option value="3">Семейный доступ 24 занятия</option>
-                    <option value="3">Семейный доступ 36 занятий</option>
-                    <option value="3">Абонемент 12 занятий (Full)</option>
-                    <option value="3">Абонемент MIX, 8 занятий</option>
-                    <option value="3">Абонемент MIX, 12 занятий</option>
-                    <option value="3">Абонемент MIX, 24 занятия</option>
-                    <option value="3">Абонемент MIX, 36 занятий</option>
-                </select>
-                <input class="field" placeholder="Ваше имя, фамилия">
-                <input class="field" placeholder="Ваш номер телефона">
-                <input class="field" placeholder="Ваша эл.почта">
-                <button class="app_button">Отправить</button>
-            </div>
-        </div>
-    </div>
+
+    {#    <div class="application">#}
+    {#        <h1 class="app_text">Оставить заявку прямо сейчас</h1>#}
+    {#        <div class="bord">#}
+    {#            <div class="all_field">#}
+    {#                    <select class="form-select ticketik" aria-label="Default select example">#}
+    {#                        <option selected>Выберите абонемент</option>#}
+    {#                        <option value="1">Абонемент на 12 занятий</option>#}
+    {#                        <option value="2">Абонемент на 24 занятий</option>#}
+    {#                        <option value="3">Абонемент на 36 занятий</option>#}
+    {#                        <option value="3">Семейный доступ 8 занятий</option>#}
+    {#                        <option value="3">Семейный доступ 12 занятий</option>#}
+    {#                        <option value="3">Семейный доступ 24 занятия</option>#}
+    {#                        <option value="3">Семейный доступ 36 занятий</option>#}
+    {#                        <option value="3">Абонемент 12 занятий (Full)</option>#}
+    {#                        <option value="3">Абонемент MIX, 8 занятий</option>#}
+    {#                        <option value="3">Абонемент MIX, 12 занятий</option>#}
+    {#                        <option value="3">Абонемент MIX, 24 занятия</option>#}
+    {#                        <option value="3">Абонемент MIX, 36 занятий</option>#}
+    {#                    </select>#}
+    {#                    <input class="field" placeholder="Ваше имя, фамилия">#}
+    {#                    <input class="field" placeholder="Ваш номер телефона">#}
+    {#                    <input class="field" placeholder="Ваша эл.почта">#}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="app_button">Отправить</button>
+    </form>
+    {#            </div>#}
+    {#        </div>#}
+    {#    </div>#}
     <div class="footer">
         <div class="social">
             <a class="main_social">Связаться с нами:</a>

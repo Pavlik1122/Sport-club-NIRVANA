@@ -13,18 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.urls import path
-import mainapp.views as mainapp
-
-app_name = 'mainapp'
+from django.conf.urls.static import static
+from django.contrib import admin
+from django.urls import path, include
+from gym import settings
 
 urlpatterns = [
-    path('', mainapp.index, name='index'),
-    path('tovar/', mainapp.tovari, name='tovari'),
-    path('abon/', mainapp.abonements, name='abonements'),
-
-    path('favorite/', mainapp.favorite, name='favorite'),
-    path('favorite/add/<int:pk>', mainapp.add_favorite, name='add_favorite'),
-    path('favorite/remove/<int:pk>', mainapp.remove_favorite, name='remove_favorite'),
-
+    path('', include('mainapp.urls', namespace='mainapp')),
+    path('', include('authapp.urls', namespace='authapp')),
+    path('admin/', admin.site.urls),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

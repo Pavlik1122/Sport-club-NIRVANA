@@ -54,3 +54,19 @@ class Favorite(models.Model):
         ordering = ['-created_at']
         verbose_name = 'Избранное'
         verbose_name_plural = 'Избранные'
+
+
+class Feedback(models.Model):
+    name = models.ForeignKey(Abonements, verbose_name='Выберите абонемент', on_delete=models.CASCADE)
+    full_name = models.CharField(verbose_name='ФИ', max_length=100)
+    tel = models.IntegerField(verbose_name='Телефон')
+    email = models.EmailField(verbose_name='email')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f'{self.full_name}{self.email}'
+
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name = 'Обратная связь'

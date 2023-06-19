@@ -28,7 +28,6 @@ def logout(request):
     return HttpResponseRedirect(reverse('mainapp:index'))
 
 
-
 def register(request):
     if request.method == 'POST':
         form = RegForm(request.POST)

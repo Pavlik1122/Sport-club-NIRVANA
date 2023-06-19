@@ -2,6 +2,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 
+from mainapp.forms import MailForm
 from mainapp.models import Products, Abonements, Favorite
 
 
@@ -63,3 +64,18 @@ def remove_favorite(request, pk):
     favor = get_object_or_404(Favorite, id=pk)
     favor.delete()
     return HttpResponseRedirect(reverse('mainapp:favorite'))
+
+
+def feedback(request):
+    if request.method == 'POST':
+        form = MailForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = MailForm()
+    context = {
+        'form': form,
+        'title': 'заявка',
+    }
+
+    return render(request, 'mainapp/index.html', context)
