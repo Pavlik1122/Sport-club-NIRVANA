@@ -775,3 +775,21 @@ form-select:focus{
 .right_number:hover{
     color: #FF9900;
 }
+.form-control{
+    font-size: 16px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 600px;
+
+    padding: 7px;
+    background: #FFFFFF;
+
+    border-radius: 10px;
+    border: 2px solid orange;
+    align-items: center;
+}
+form-control:focus{
+        box-shadow: none;
+    color: #7B7B7B;
+    border: 1px solid #FF9900;
+}

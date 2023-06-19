@@ -33,7 +33,7 @@
             </div>
         {% else %}
             <div class="number">
-                <a class="right_number" style="text-decoration:none" href="#">Корзина</a>
+                <a class="right_number" style="text-decoration:none" href="#">Избранное</a>
                 <a class="right_number" style="text-decoration:none" href="#">|</a>
                 <a class="right_number" style="text-decoration:none" href="{% url 'authapp:logout' %}">Выйти</a>
             </div>
@@ -70,11 +70,13 @@
                                 </select>
                                 {% if user.is_authenticated %}
                                     <div class="comments_form">
-                                        <a href="{% url 'mainapp:add_favorite' item.id %}" style="color:white; text-decoration:none" class="btn_product2_mini">В избранное</a>
+                                        <a href="{% url 'mainapp:add_favorite' item.id %}"
+                                           style="color:white; text-decoration:none" class="btn_product2_mini">В
+                                            избранное</a>
                                     </div>
                                 {% else %}
                                     <a href="{% url 'authapp:login' %}"
-                                        style="color:white; text-decoration:none" class="btn_product2_mini">В избранное
+                                       style="color:white; text-decoration:none" class="btn_product2_mini">В избранное
                                     </a>
                                 {% endif %}
                             </div>

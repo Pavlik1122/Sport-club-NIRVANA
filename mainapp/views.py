@@ -1,14 +1,27 @@
+from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 
+import settings
 from mainapp.forms import MailForm
 from mainapp.models import Products, Abonements, Favorite
 
 
 def index(request):
+    if request.method == 'POST':
+        form = MailForm(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            messages = f'Абонемент {form.name} \nФИ: {form.full_name} ({form.email})\nТелефон: {form.tel}'
+            res = send_mail(settings.EMAIL_TITLE, messages, settings.EMAIL_HOST_USER, ['pasha3232@inbox.ru'])
+            if res:
+                form.save()
+            return HttpResponseRedirect(reverse('mainapp:index'))
+    else:
+        form = MailForm()
     context = {
-        'title': 'Главная',
+        'form': form,
     }
     return render(request, 'mainapp/index.html', context)
 
@@ -66,16 +79,3 @@ def remove_favorite(request, pk):
     return HttpResponseRedirect(reverse('mainapp:favorite'))
 
 
-def feedback(request):
-    if request.method == 'POST':
-        form = MailForm(request.POST)
-        if form.is_valid():
-            form.save()
-    else:
-        form = MailForm()
-    context = {
-        'form': form,
-        'title': 'заявка',
-    }
-
-    return render(request, 'mainapp/index.html', context)
