@@ -1,0 +1,252 @@
+.btn-log{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 35px;
+    background: white;
+    border: 1px solid darkgray;
+}
+.btn-log:hover {
+    border: 1px solid #FF9900;
+    color: #FF9900;
+}
+
+.register{
+    margin-top: 40px;
+}
+
+.form-control:hover, .form-control:focus{
+    border: 1px solid #FF9900;
+}
+.form-control{
+    border: 1px solid darkgray;
+}
+.form-control:focus{
+    box-shadow: none;
+}
+.main_block{
+    background-image: url('../img/main_block.png');
+    width: 1920px;
+    height: 120px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.main_block2{
+    width: 1920px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.main_text {
+    color: white;
+    font-size: 26px;
+    font-family: "Segoe UI";
+    font-weight: lighter;
+}
+
+.main_text:hover{
+    color: #FF9900;
+}
+
+.centre{
+    margin-top: 35px;
+    width: 700px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    text-decoration-line: none;
+}
+
+.right_number{
+    color: white;
+    font-size: 26px;
+    font-family: "Segoe UI";
+    font-weight: lighter;
+}
+
+
+.logo_text{
+    margin-top: 10px;
+    color: white;
+    font-size: 26px;
+    font-family: "Segoe UI";
+    font-weight: bold;
+}
+
+.logo{
+    margin-top: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.number{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+.mega_acc_mini{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 315px;
+    height: 280px;
+    background: #FFFFFF;
+    box-shadow: 3px 5px 10px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+.banka_mini{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.protein_mini{
+    display: flex;
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 113.49%;
+    text-align: center;
+
+    color: #000000;
+}
+.price_mini{
+    width: 360px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 82px;
+    justify-content: space-evenly;
+}
+.btns_product_acc_mini{
+    height: 50px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+.btns2{
+    display: flex;
+    width: 250px;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+
+}
+.price_wall_mini{
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 113.49%;
+}
+.form-select{
+    width: 90px;
+    font-size: 14px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+.form-select:focus{
+    box-shadow: none;
+    border: 1px solid #FF9900;
+
+}
+
+.cash_mini{
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 113.49%;
+    /* or 27px */
+
+    text-align: center;
+
+    color: #44B81B;
+}
+.btn_product1_mini{
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 120px;
+    height: 28px;
+    background: white;
+    border: 1px solid #000000;
+    font-size: 14px;
+    font-family: "Segoe UI";
+    font-weight: 400;
+}
+.btn_product2_mini{
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 130px;
+    height: 35px;
+    background: #FF9900;
+    border: 1px solid #FF9900;
+    color: white;
+    font-size: 14px;
+    font-family: "Segoe UI";
+    font-weight: 400;
+    border-radius: .25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.price_btn_cash_mini{
+    width: 300px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.cards_1{
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    justify-content: space-between;
+}
+.cards_2{
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    justify-content: space-between;
+}
+.container3 {
+    margin-top: 100px;
+    height: 970px;
+    width: 1920px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.c1 {
+    width: 1480px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.right_number:hover{
+    color: #FF9900;
+}
+.obsh{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

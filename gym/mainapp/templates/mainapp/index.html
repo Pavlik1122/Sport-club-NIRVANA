@@ -1,0 +1,446 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Главная</title>
+    <link href='{% static 'css/bootstrap.min.css' %}' rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+</head>
+<body>
+<div class="main_block">
+    <div class="main_block2">
+        <div class="logo">
+            <img src="{% static 'img/logo.png' %}" width="80" height="60">
+            <p class="logo_text">СК "NIRVANA"</p>
+        </div>
+        <div class="centre">
+            <a href="{% url 'mainapp:index' %}" style="color:#FF0000; text-decoration:none">
+                <p class="main_text">Главная</p>
+            </a>
+            <a href="{% url 'mainapp:abonements' %}" style="color:#FF0000; text-decoration:none">
+                <p class="main_text" id="tickets">Абонементы</p>
+            </a>
+            <a href="{% url 'mainapp:tovari' %}" style="color:#FF0000; text-decoration:none">
+                <p class="main_text" id="order">Товары</p>
+            </a>
+        </div>
+        {% if not user.is_authenticated %}
+            <div class="number">
+                <a class="right_number" style="text-decoration:none" href="{% url 'authapp:login' %}">Авторизация</a>
+                <a class="right_number" style="text-decoration:none" href="#">|</a>
+                <a class="right_number" style="text-decoration:none" href="{% url 'authapp:register' %}">Регистрация</a>
+            </div>
+        {% else %}
+            <div class="number">
+                <a class="right_number" style="text-decoration:none" href="{% url 'mainapp:favorite' %}">Избранное</a>
+                <a class="right_number" style="text-decoration:none" href="#">|</a>
+                <a class="right_number" style="text-decoration:none" href="{% url 'authapp:logout' %}">Выйти</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% block content %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <title>Главная</title>
+        <link href='{% static 'css/bootstrap.min.css' %}' rel="stylesheet">
+        <link href='{% static 'css/style.css' %}' rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+    </head>
+    <body>
+    <div class="preview">
+        <div class="preview_EKB">
+            <h1 class="preview_text">СПОРТИВНЫЙ КЛУБ <span class="name">"NIRVANA"</span></h1>
+            <p class="EKB">г.Курган</p>
+        </div>
+        <div class="buttons">
+            <button class="preview_button">Позвонить</button>
+            <button class="preview_button">Оставить заявку</button>
+        </div>
+    </div>
+    <div class="mamama">
+        <h2 class="season_tickets">Абонементы</h2>
+        <div id="wrapper">
+            <div id="carousel">
+                <div id="content">
+                    <div class="item">
+                        <div class="main">
+                            <div class="tickets">
+                                <h1 class="text_tickets">Абонемент на 12 занятий</h1>
+                                <img class="img_logo" src="{% static 'img/1.png' %}" width="370">
+                                <p class="description">Абонемент на 12 занятий<br>
+                                    в тренажерном зале.<br>
+                                    Сроком на 1 месяц</p>
+                                <button class="more">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="main">
+                            <div class="tickets">
+                                <h1 class="text_tickets">Абонемент на 24 занятия</h1>
+                                <img class="img_logo" src="{% static 'img/2.png' %}" width="370">
+                                <p class="description">Абонемент на 24 занятий<br>
+                                    в тренажерном зале.<br>
+                                    Сроком на 2 месяца</p>
+                                <button class="more">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="main">
+                            <div class="tickets">
+                                <h1 class="text_tickets">Абонемент на 36 занятий</h1>
+                                <img class="img_logo" src="{% static 'img/3.png' %}" width="370">
+                                <p class="description">Абонемент на 36 занятий<br>
+                                    в тренажерном зале.<br>
+                                    Сроком на 3 месяца</p>
+                                <button class="more">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="main">
+                            <div class="tickets">
+                                <h1 class="text_tickets">Семейный доступ 8 занятий</h1>
+                                <img class="img_logo" src="{% static 'img/4.png' %}" width="370">
+                                <p class="description">Абонемент на 8<br> тренировок сроком на 1<br> месяц. Время
+                                    посещения:<br>
+                                    с 7:30 до 16:00</p>
+                                <button class="more">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="main">
+                            <div class="tickets">
+                                <h1 class="text_tickets">Семейный доступ 12 занятий</h1>
+                                <img class="img_logo" src="{% static 'img/5.png' %}" width="370">
+                                <p class="description">Абонемент на 12<br> тренировок сроком на 1<br> месяц. Время
+                                    посещения:<br> с 7:30 до 16:00</p>
+                                <button class="more">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="main">
+                            <div class="tickets">
+                                <h1 class="text_tickets">Семейный доступ 24 занятия</h1>
+                                <img class="img_logo" src="{% static 'img/6.png' %}" width="370">
+                                <p class="description">Абонемент на 24<br> тренировки сроком на 2<br> месяца. Время
+                                    посещения:<br> с 7:30 до 16:00</p>
+                                <button class="more">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="main">
+                            <div class="tickets">
+                                <h1 class="text_tickets">Семейный доступ 36 занятий</h1>
+                                <img class="img_logo" src="{% static 'img/7.png' %}" width="370">
+                                <p class="description">Абонемент на 36<br> тренировок сроком на 3<br> месяца. Время
+                                    посещения:<br> с 7:30 до 16:00</p>
+                                <button class="more">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="main">
+                            <div class="tickets">
+                                <h1 class="text_tickets">Абонемент 12 занятий (Full)</h1>
+                                <img class="img_logo" src="{% static 'img/8.png' %}" width="370">
+                                <p class="description">Абонемент на 12 занятий<br>
+                                    в тренажерном зале.<br>
+                                    Сроком на 1 месяц</p>
+                                <button class="more">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="main">
+                            <div class="tickets">
+                                <h1 class="text_tickets">Абонемент MIX, 8 занятий</h1>
+                                <img class="img_logo" src="{% static 'img/9.png' %}" width="370">
+                                <p class="description">Абонемент на 4 групповых<br> занятия и 4 занятия в<br>
+                                    тренажерном зале. Сроком на 1 месяц</p>
+                                <button class="more">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="main">
+                            <div class="tickets">
+                                <h1 class="text_tickets">Абонемент MIX, 12 занятий</h1>
+                                <img class="img_logo" src="{% static 'img/10.png' %}" width="370">
+                                <p class="description">Абонемент на 6 групповых<br> занятий и 6 занятий в<br>
+                                    тренажерном зале. Сроком на 1 месяц</p>
+                                <button class="more">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="main">
+                            <div class="tickets">
+                                <h1 class="text_tickets">Абонемент MIX, 24 занятия</h1>
+                                <img class="img_logo" src="{% static 'img/11.png' %}" width="370">
+                                <p class="description">Абонемент на 12 групповых<br> занятий и 12 занятий в<br>
+                                    тренажерном зале. Сроком на 1 месяц</p>
+                                <button class="more">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="main">
+                            <div class="tickets">
+                                <h1 class="text_tickets">Абонемент MIX, 36 занятий</h1>
+                                <img class="img_logo" src="{% static 'img/12.png' %}" width="370">
+                                <p class="description">Абонемент на 18 групповых<br> занятий и 18 занятий в<br>
+                                    тренажерном зале. Сроком на 1 месяц</p>
+                                <button class="more">Подробнее</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="prev">
+                    <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                    >
+                        <path fill="none" d="M0 0h24v24H0V0z"/>
+                        <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z"/>
+                    </svg>
+                </button>
+                <button id="next">
+                    <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                    >
+                        <path fill="none" d="M0 0h24v24H0V0z"></path>
+                        <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="container2">
+        <h1 class="season_tickets">Товары</h1>
+        <div class="product">
+            <div class="mega_acc">
+                <div class="banka">
+                    <img src="{% static 'img/banka.png' %}" width="250">
+                    <img src="{% static 'img/protein_whey.png' %}" width="225">
+                </div>
+                <div class="protein">ПРОТЕИН 100% PROTEIN WHEY</div>
+                <div class="price_btn_cash">
+                    <div class="price">
+                        <p class="price_wall">3790 руб.</p>
+                        <button class="btn_product1">Выберите вкус</button>
+                    </div>
+                    <div class="btns_product_acc">
+                        <p class="cash">Кешбек до 265 руб.</p>
+                        <button class="btn_product2">Купить</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cards_1">
+                <div class="mega_acc_mini">
+                    <div class="mini_banka">
+                        <img src="{% static 'img/cazein.png' %}" width="80">
+                    </div>
+                    <div class="protein_mini">ПРОТЕИН 100% CASEIN PROTEIN<br>OPTIMUM NUTRITION</div>
+                    <div class="price_btn_cash_mini">
+                        <div class="price_mini">
+                            <p class="price_wall_mini">3900 руб.</p>
+                            <button class="btn_product1_mini">Выберите вкус</button>
+                        </div>
+                        <div class="btns_product_acc_mini">
+                            <p class="cash_mini">Кешбек до 285 руб.</p>
+                            <button class="btn_product2_mini">Купить</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mega_acc_mini">
+                    <div class="mini_banka">
+                        <img src="{% static 'img/creatine.png' %}" width="130">
+                    </div>
+                    <div class="protein_mini">CREATINE 2500 CAPS OPTIMUM<br>NUTRITION</div>
+                    <div class="price_btn_cash_mini">
+                        <div class="price_mini">
+                            <p class="price_wall_mini">1590 руб.</p>
+                            <button class="btn_product1_mini">Выберите вкус</button>
+                        </div>
+                        <div class="btns_product_acc_mini">
+                            <p class="cash_mini">Кешбек до 170 руб.</p>
+                            <button class="btn_product2_mini">Купить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cards_2">
+                <div class="mega_acc_mini">
+                    <div class="mini_banka">
+                        <img src="{% static 'img/bcaa.png' %}" width="140">
+                    </div>
+                    <div class="protein_mini"> INSTANTIZED BCAA 5000 POWDER</div>
+                    <div class="price_btn_cash_mini">
+                        <div class="price_mini">
+                            <p class="price_wall_mini">1199 руб.</p>
+                            <button class="btn_product1_mini">Выберите вкус</button>
+                        </div>
+                        <div class="btns_product_acc_mini">
+                            <p class="cash_mini">Кешбек до 115 руб.</p>
+                            <button class="btn_product2_mini">Купить</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mega_acc_mini">
+                    <div class="mini_banka">
+                        <img src="{% static 'img/crtpowder.png' %}" width="150">
+                    </div>
+                    <div class="protein_mini">MICRONIZED CREATINE POWDER</div>
+                    <div class="price_btn_cash_mini">
+                        <div class="price_mini">
+                            <p class="price_wall_mini">2090 руб.</p>
+                            <button class="btn_product1_mini">Выберите вкус</button>
+                        </div>
+                        <div class="btns_product_acc_mini">
+                            <p class="cash_mini">Кешбек до 210 руб.</p>
+                            <button class="btn_product2_mini">Купить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="{% url 'mainapp:tovari' %}" style="color:#FF0000; text-decoration:none">
+            <button class="btn_more">Посмотреть еще</button>
+        </a>
+    </div>
+    <div class="article">
+        <h9 class="season_tickets">Может быть полезным</h9>
+        <div class="all_article">
+            <div class="img_text">
+                <a href="fintess-trener.html" style="color:black; text-decoration:none">
+                    <img src="{% static 'img/vybor_trener.png' %}" width="400">
+                    <p class="text_article">Выбираем идеальнго<br>
+                        фитнес-тренера:<br>советы
+                        новичкам</p>
+                </a>
+            </div>
+            <div class="img_text">
+                <a href="kak-snyat-bol.html" style="color:black; text-decoration:none">
+                    <img src="{% static 'img/vybor_trener2.png' %}" width="400">
+                    <p class="text_article">Как снять боль в<br>пояснице - упражнения<br>и рекомендации</p>
+                </a>
+            </div>
+            <div class="img_text">
+                <a href="training-room.html" style="color:black; text-decoration:none">
+                    <img src="{% static 'img/vybor_trener3.png' %}" width="400">
+                    <p class="text_article">Тренажерный зал -<br>
+                        с чего начать ?</p>
+                </a>
+            </div>
+        </div>
+        <button class="btn_article">Больше полезного</button>
+    </div>
+
+    <div class="about">
+        <h4 class="text_about">О нас</h4>
+        <div class="all">
+            <div class="about_row">
+                <p class="about_gym">&bull; 3 бассейна (плавательный 25 метров,<br> детский с подводным
+                    аэромассажем,<br>
+                    гидромассажный с релаксационной<br> зоной, джакузи и подводными<br> анатомическими шезлонгами).</p>
+
+                <p class="about_gym">&bull; Банный комплекс (Турецкий хаммам,<br> финская сауна и отдельные в
+                    раздевалках<br>
+                    инфракрасная сауна, солевая комната).</p>
+
+                <p class="about_gym">&bull; Тренажерный зал (1000кв. м.).</p>
+
+                <p class="about_gym">&bull; Зал кардио-тренажеров с кардио<br> театром.</p>
+
+                <p class="about_gym">&bull; Групповые занятия (более 30<br> направлений) танцы, аэробика, силовые<br>
+                    классы,
+                    функциональные.</p>
+
+                <p class="about_gym">&bull; Студия йоги и пилатеса.</p>
+
+                <p class="about_gym">&bull; Вводные тренировки по трем<br> направлениям фитнес (тренажерный зал,<br>
+                    бассейн,
+                    групповые программы).</p>
+            </div>
+            <div class="about_img">
+                <img src="{% static 'img/about1.png' %}">
+                <img src="{% static 'img/about2.png' %}">
+            </div>
+        </div>
+    </div>
+    <div class="application">
+        <h1 class="app_text">Оставить заявку прямо сейчас</h1>
+        <div class="bord">
+            <div class="all_field">
+                <select class="form-select ticketik" aria-label="Default select example">
+                    <option selected>Выберите абонемент</option>
+                    <option value="1">Абонемент на 12 занятий</option>
+                    <option value="2">Абонемент на 24 занятий</option>
+                    <option value="3">Абонемент на 36 занятий</option>
+                    <option value="3">Семейный доступ 8 занятий</option>
+                    <option value="3">Семейный доступ 12 занятий</option>
+                    <option value="3">Семейный доступ 24 занятия</option>
+                    <option value="3">Семейный доступ 36 занятий</option>
+                    <option value="3">Абонемент 12 занятий (Full)</option>
+                    <option value="3">Абонемент MIX, 8 занятий</option>
+                    <option value="3">Абонемент MIX, 12 занятий</option>
+                    <option value="3">Абонемент MIX, 24 занятия</option>
+                    <option value="3">Абонемент MIX, 36 занятий</option>
+                </select>
+                <input class="field" placeholder="Ваше имя, фамилия">
+                <input class="field" placeholder="Ваш номер телефона">
+                <input class="field" placeholder="Ваша эл.почта">
+                <button class="app_button">Отправить</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="social">
+            <a class="main_social">Связаться с нами:</a>
+            <a class="text_footer">+7 (3522) 22-95-00</a>
+            <a class="main_social">Подробнее о нас:</a>
+            <div class="img_social">
+                <a href="https://vk.com/sknirvana" style="color:black; text-decoration:none">
+                    <p class="text_footer">VKONTAKTE </p>
+                </a>
+            </div>
+            <div class="img_social">
+                <a href="https://www.instagram.com/nirvana_and_muscle_house/" style="color:black; text-decoration:none">
+                    <p class="text_footer">INSTAGRAMM</p>
+                </a>
+            </div>
+            <div class="img_social">
+                <a class="text_footer">TELEGRAM</a>
+            </div>
+            <a class="all_info">Политика конфиденциальности правила клуба. Вся информация, публикуемая на сайте,<br>носит
+                исключительно информационный характер, и ни при каких
+                условиях не может<br>являться публичной офертой</a>
+        </div>
+        <script type="text/javascript" charset="utf-8" async
+                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1b59aee875638f36a6b14a45d5b46794ffb7ce72c160fe085e31827d1fee3f2e&amp;width=650&amp;height=250&amp;lang=ru_RU&amp;scroll=true"></script>
+        <a href="#" class="scroll_top">
+            <img src="{% static 'img/up.png' %}" width="40" height="40" alt="">
+        </a>
+        <script href="{% static 'js/bootstrap.min.js' %}"></script>
+        <script href="{% static 'js/script.js' %}"></script>
+    </body>
+    </html>
+{% endblock %}

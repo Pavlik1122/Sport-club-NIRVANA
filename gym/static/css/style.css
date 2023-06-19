@@ -1,0 +1,777 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.main_block{
+    background-image: url('../img/main_block.png');
+    width: 1920px;
+    height: 980px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.main_block2{
+    width: 1920px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.main_text {
+    color: white;
+    font-size: 26px;
+    font-family: "Segoe UI";
+    font-weight: lighter;
+}
+
+.main_text:hover{
+    color: #FF9900;
+}
+
+.centre{
+    margin-top: 35px;
+    width: 700px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    text-decoration-line: none;
+}
+
+.right_number{
+    color: white;
+    font-size: 26px;
+    font-family: "Segoe UI";
+    font-weight: lighter;
+}
+
+
+.logo_text{
+    margin-top: 10px;
+    color: white;
+    font-size: 26px;
+    font-family: "Segoe UI";
+    font-weight: bold;
+}
+
+.logo{
+    margin-top: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.number{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.preview{
+    margin-top: -470px;
+    width: 1920px;
+    height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+
+.preview_text{
+    font-size: 80px;
+    color: white;
+    font-family: "Segoe UI";
+    font-weight: lighter;
+}
+
+.name{
+    font-weight: bolder;
+}
+
+.EKB{
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 44px;
+    line-height: 68px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.preview_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    height: 60px;
+    color: white;
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    font-family: "Segoe UI";
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 28px;
+    line-height: 37px;
+    cursor: pointer;
+}
+.preview_button:hover{
+    border: 1px solid #FF9900;
+    color: #FF9900;
+}
+
+.preview_EKB{
+    margin-top: -185px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.buttons{
+    width: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#wrapper {
+
+    max-width: 1320px;
+    position: relative;
+
+}
+
+#carousel {
+    overflow: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+#carousel::-webkit-scrollbar {
+    height: 0;
+}
+
+#prev,
+#next {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background: white;
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    outline: 0;
+    cursor: pointer;
+    position: absolute;
+}
+
+#prev {
+    top: 50%;
+    left: 0;
+    transform: translate(50%, -50%);
+    display: none;
+}
+
+#next {
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+}
+
+#content {
+    display: grid;
+    grid-gap: 16px;
+    grid-auto-flow: column;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.item {
+    width: 430px;
+    height: 600px;
+
+
+}
+.mamama{
+    margin-top: 170px;
+    width: 1920px;
+    height: 800px;
+    background: #D9D9D9;
+    background: rgba(217, 217, 217, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.tickets{
+    height: 570px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.text_tickets{
+    font-size: 30px;
+    font-family: "Segoe UI";
+    font-weight: normal;
+    text-align: center;
+}
+.description{
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-size: 20px;
+    line-height: 113.49%;
+    text-align: center;
+    color: #747474;
+}
+.more{
+    font-weight: 300;
+    font-size: 22px;
+    width: 280px;
+    height: 35px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.main{
+    width: 420px;
+    height: 580px;
+    background: #FFFFFF;
+    border-radius: 15px;
+}
+.more:hover{
+    color: #FF9900;
+    border: 2px solid #FF9900;
+}
+.season_tickets{
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 64px;
+}
+
+.about{
+    margin-top: 40px;
+    background: rgba(217, 217, 217, 0.2);
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.about_img{
+    width: 700px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.about_row{
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.all{
+    width: 1600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.text_about{
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 64px;
+}
+.about_gym{
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 33px;
+    line-height: 113.49%;
+}
+.application{
+    width: 100%;
+    margin-top: 40px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.app_text{
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 64px;
+    color: #000000;
+}
+.field{
+    font-size: 16px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 600px;
+    padding: 20px;
+    background: #FFFFFF;
+
+    border-radius: 10px;
+    border: 2px solid orange;
+    align-items: center;
+}
+.app_button {
+    width: 300px;
+    padding: 10px;
+    background: #FFFFFF;
+    border: 2px solid #FF9900;
+    border-radius: 6px;
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    cursor: pointer;
+}
+.all_field{
+    height: 450px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+
+}
+.app_button:hover{
+    color: black;
+    border: 2px solid black;
+
+}
+
+.ticketik{
+    font-size: 16px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 624px;
+    padding: 18px;
+    background: #FFFFFF;
+    color: black;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid #FF9900;
+    align-items: center;
+}
+.form-select{
+    font-size: 16px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 600px;
+    padding: 20px;
+    background: #FFFFFF;
+    color: #7B7B7B;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid #FF9900;
+    align-items: center;
+}
+form-select:focus{
+    box-shadow: none;
+    color: #7B7B7B;
+    border: 1px solid #FF9900;
+}
+.scroll_panel {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 90px;
+    transition: background 0.2s ease;
+}
+.scroll_top{
+    width:100px;
+    text-align:center;
+    padding:10px;
+    position:fixed;
+    bottom:20px;
+    right: 0;
+    cursor:pointer;
+}
+.footer{
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    background-color: #444546;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+.social{
+    justify-content: space-evenly;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+}
+.main_social{
+    color: white;
+    font-size: 18px;
+    font-family: "Segoe UI";
+    font-weight: 300;
+}
+.text_footer{
+    color: #FFFFFF;
+    font-size: 16px;
+    font-family: "Segoe UI";
+    font-weight: 300;
+
+}
+.all_info{
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 21px;
+
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+.article{
+    width: 100%;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.all_article{
+    width: 1440px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.btn_article{
+    width: 280px;
+    height: 55px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 14px;
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 53px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.btn_article:hover{
+    border: 1px solid #FF9900;
+    color: #FF9900;
+}
+.text_article{
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    text-align: center;
+}
+.img_text{
+    transition: 0.4s;
+    cursor:pointer;
+}
+.img_text:hover {
+    transition: 0.4s;
+    transform: scale(1.1);
+}
+.product{
+    width: 1400px;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+.mega_acc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 600px;
+    height: 600px;
+    background: #FFFFFF;
+    box-shadow: 3px 5px 10px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+.banka{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.protein{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 113.49%;
+    text-align: center;
+
+    color: #000000;
+}
+.price{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+    justify-content: space-evenly;
+}
+.btns_product_acc{
+    height: 200px;
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+
+}
+.price_wall{
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 113.49%;
+
+}
+
+.cash{
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 113.49%;
+    /* or 27px */
+
+    text-align: center;
+
+    color: #44B81B;
+}
+.btn_product1{
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 155px;
+    height: 40px;
+    background: white;
+    border: 1px solid #000000;
+    font-size: 20px;
+    font-family: "Segoe UI";
+    font-weight: 400;
+}
+.btn_product2{
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 155px;
+    height: 40px;
+    background: #FF9900;
+    border: 1px solid #FF9900;
+    color: white;
+    font-size: 20px;
+    font-family: "Segoe UI";
+    font-weight: 400;
+}
+.price_btn_cash{
+    width: 650px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mega_acc_mini{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 315px;
+    height: 280px;
+    background: #FFFFFF;
+    box-shadow: 3px 5px 10px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+.banka_mini{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.protein_mini{
+    display: flex;
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 113.49%;
+    text-align: center;
+
+    color: #000000;
+}
+.price_mini{
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 82px;
+    justify-content: space-evenly;
+}
+.btns_product_acc_mini{
+    height: 100px;
+    width: 140px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+
+}
+.price_wall_mini{
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 113.49%;
+
+}
+
+.cash_mini{
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 113.49%;
+    /* or 27px */
+
+    text-align: center;
+
+    color: #44B81B;
+}
+.btn_product1_mini{
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 120px;
+    height: 28px;
+    background: white;
+    border: 1px solid #000000;
+    font-size: 14px;
+    font-family: "Segoe UI";
+    font-weight: 400;
+}
+.btn_product2_mini{
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 120px;
+    height: 28px;
+    background: #FF9900;
+    border: 1px solid #FF9900;
+    color: white;
+    font-size: 14px;
+    font-family: "Segoe UI";
+    font-weight: 400;
+}
+.price_btn_cash_mini{
+    width: 300px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cards_1{
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    justify-content: space-between;
+}
+.cards_2{
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    justify-content: space-between;
+}
+.container2{
+    margin-top: 50px;
+    width: 100%;
+    height: 840px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.btn_more{
+    width: 280px;
+    height: 55px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 14px;
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 53px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration-line: none;
+}
+.btn_more:hover{
+    border: 1px solid #FF9900;
+    color: #FF9900;
+
+}
+.container3{
+    margin-top: 100px;
+    height: 970px;
+    width: 1920px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main_block_tov{
+    background-image: url('img/main_block.png');
+    width: 1920px;
+    height: 101px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.main_block2_tov{
+    width: 1800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.c1{
+    width: 1480px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.right_number:hover{
+    color: #FF9900;
+}

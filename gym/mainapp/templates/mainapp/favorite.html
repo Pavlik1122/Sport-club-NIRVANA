@@ -1,0 +1,63 @@
+{% extends 'mainapp/index.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Главная</title>
+    <link href='{% static 'css/bootstrap.min.css' %}' rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+</head>
+<body>
+<div class="main_block">
+    <div class="main_block2">
+        <div class="logo">
+            <img src="{% static 'img/logo.png' %}" width="80" height="60">
+            <p class="logo_text">СК "NIRVANA"</p>
+        </div>
+        <div class="centre">
+            <a href="{% url 'mainapp:index' %}" style="color:#FF0000; text-decoration:none">
+                <p class="main_text">Главная</p>
+            </a>
+            <a href="{% url 'mainapp:abonements' %}" style="color:#FF0000; text-decoration:none">
+                <p class="main_text" id="tickets">Абонементы</p>
+            </a>
+            <a href="{% url 'mainapp:tovari' %}" style="color:#FF0000; text-decoration:none">
+                <p class="main_text" id="order">Товары</p>
+            </a>
+            <p class="main_text" id="about">О нас</p>
+        </div>
+        {% if not user.is_authenticated %}
+            <div class="number">
+                <a class="right_number" style="text-decoration:none" href="{% url 'authapp:login' %}">Авторизация</a>
+                <a class="right_number" style="text-decoration:none" href="#">|</a>
+                <a class="right_number" style="text-decoration:none" href="{% url 'authapp:register' %}">Регистрация</a>
+            </div>
+        {% else %}
+            <div class="number">
+                <a class="right_number" style="text-decoration:none" href="#">Корзина</a>
+                <a class="right_number" style="text-decoration:none" href="#">|</a>
+                <a class="right_number" style="text-decoration:none" href="{% url 'authapp:logout' %}">Выйти</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% block content %}
+    <link href='{% static 'css/register.css' %}' rel="stylesheet">
+    <h3 class="d-flex justify-content-center mt-4">Избранное</h3>
+    <table class="table my-2 box">
+        <tbody>
+        {% for item in favorite %}
+            <tr>
+                <td>{{ item.news.name|capfirst }}</td>
+                <td>{{ item.news.price }} руб.</td>
+                <td>
+                    <a href="{% url 'mainapp:remove_favorite' item.id %}" class="btn">Удалить</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

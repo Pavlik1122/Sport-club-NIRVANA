@@ -1,0 +1,57 @@
+.card_abon{
+    width: 370px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.tickets{
+    height: 570px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+.text_tickets{
+    font-size: 30px;
+    font-family: "Segoe UI";
+    font-weight: normal;
+    text-align: center;
+}
+.description{
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-size: 20px;
+    line-height: 113.49%;
+    text-align: center;
+    color: #747474;
+}
+.more{
+    font-weight: 300;
+    font-size: 22px;
+    width: 280px;
+    height: 35px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.more:hover{
+    color: #FF9900;
+    border: 2px solid #FF9900;
+}
+.obs{
+    width: 1700px;
+    height: 1100px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

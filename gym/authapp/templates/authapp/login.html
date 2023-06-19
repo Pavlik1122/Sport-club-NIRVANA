@@ -1,0 +1,20 @@
+{% extends 'mainapp/index.html' %}
+{% load static %}
+{% block content %}
+<link href='{% static 'css/register.css' %}' rel="stylesheet">
+    <div class="container">
+        <div class="register">
+            <h3>Авторизация</h3>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="d-flex justify-content-between flex-wrap">
+                    <button class="btn-log">Войти</button>
+                    <a href="{% url 'authapp:register' %}" style="color:black; text-decoration:none">
+                        Нет аккаунта?
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
